@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { ShopContext } from '../context/ShopContext';
-import { assets } from '../assets/assets'; // stars
+import { assets } from '../assets/assets'; 
 
 const Product = () => {
   const { productId } = useParams();
@@ -16,7 +16,7 @@ const Product = () => {
     const product = products.find(p => p._id === productId);
 
     if (product) {
-      // Parse images safely
+      // Parse images 
       let imagesArray = [];
       if (product.images) {
         try {
@@ -53,7 +53,6 @@ const Product = () => {
     <div className="max-w-5xl mx-auto p-5">
       <div className="flex flex-col md:flex-row gap-6">
 
-        {/* Left: Images */}
         <div className="w-full md:w-1/2 flex gap-4">
           <div className="flex flex-col gap-2">
             {productData.images.map((img, i) => (
@@ -75,7 +74,6 @@ const Product = () => {
           </div>
         </div>
 
-        {/* Right: Details */}
         <div className="w-full md:w-1/2 flex flex-col gap-4">
           <h1 className="text-3xl font-bold">{productData.name}</h1>
 

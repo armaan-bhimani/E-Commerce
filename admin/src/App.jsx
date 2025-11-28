@@ -5,7 +5,7 @@ import Sidebar from "./components/Sidebar";
 import Add from "./pages/Add";
 import List from "./pages/List";
 import Orders from "./pages/Orders";
-import Update from "./pages/Update"; // NEW
+import Update from "./pages/Update"; 
 import Login from "./components/Login";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -35,18 +35,14 @@ const App = () => {
     <>
       <ToastContainer />
       <div className="flex flex-col h-full bg-gray-50">
-        {/* Navbar */}
         <Navbar setToken={setToken} />
         <hr />
 
-        {/* Main container */}
         <div className="flex flex-1 h-full">
-          {/* Sidebar */}
           <div className="h-full w-64 bg-white shadow-md">
             <Sidebar />
           </div>
 
-          {/* Main content */}
           <div className="flex-1 p-4 overflow-auto">
             <Routes>
               <Route path="/add" element={<Add token={token} />} />

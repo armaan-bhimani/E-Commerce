@@ -14,18 +14,13 @@ const Add = ({ token }) => {
   const [bestseller, setBestseller] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  // ---------------------------
   // HANDLE IMAGE UPLOAD
-  // ---------------------------
   const handleImageChange = (e, index) => {
     const copy = [...images];
     copy[index] = e.target.files[0];
     setImages(copy);
   };
 
-  // ---------------------------
-  // TOGGLE SIZE BUTTONS
-  // ---------------------------
   const handleSizeToggle = (size) => {
     if (sizes.includes(size)) {
       setSizes(sizes.filter((s) => s !== size));
@@ -34,9 +29,7 @@ const Add = ({ token }) => {
     }
   };
 
-  // ---------------------------
   // SUBMIT PRODUCT
-  // ---------------------------
   const handleSubmit = async () => {
     if (!token) return toast.error("You must be logged in!");
     if (!name || !description || !price || !category || !subCategory)
@@ -97,7 +90,6 @@ const Add = ({ token }) => {
   <div className="w-full h-full p-4 md:p-6 overflow-y-auto">
     <h2 className="text-xl md:text-2xl font-bold mb-4">Add New Product</h2>
 
-    {/* Images */}
     <div className="mb-4">
       <label className="font-medium text-sm md:text-base">Upload Images</label>
 
@@ -129,7 +121,6 @@ const Add = ({ token }) => {
       </div>
     </div>
 
-    {/* Product Name */}
     <div className="mb-4">
       <label className="font-medium text-sm md:text-base">Product Name</label>
       <input
@@ -140,7 +131,6 @@ const Add = ({ token }) => {
       />
     </div>
 
-    {/* Description */}
     <div className="mb-4">
       <label className="font-medium text-sm md:text-base">Description</label>
       <textarea
@@ -151,7 +141,6 @@ const Add = ({ token }) => {
       />
     </div>
 
-    {/* Category Row */}
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
       <div>
         <label className="font-medium text-sm md:text-base">Category</label>
@@ -167,7 +156,6 @@ const Add = ({ token }) => {
         </select>
       </div>
 
-      {/* Subcategory */}
       <div>
         <label className="font-medium text-sm md:text-base">Sub Category</label>
         <select
@@ -183,7 +171,6 @@ const Add = ({ token }) => {
       </div>
     </div>
 
-    {/* Price */}
     <div className="mb-4">
       <label className="font-medium text-sm md:text-base">Price</label>
       <input
@@ -195,7 +182,6 @@ const Add = ({ token }) => {
       />
     </div>
 
-    {/* Sizes */}
     <label className="font-medium text-sm md:text-base">Sizes</label>
     <div className="flex flex-wrap gap-2 my-2">
       {["S", "M", "L", "XL", "XXL"].map((size) => (
@@ -213,7 +199,6 @@ const Add = ({ token }) => {
       ))}
     </div>
 
-    {/* Bestseller */}
     <div className="mb-4 flex items-center gap-2">
       <input
         type="checkbox"

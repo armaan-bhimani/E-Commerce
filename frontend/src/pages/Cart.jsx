@@ -7,20 +7,17 @@ const Cart = () => {
   const [cartData, setCartData] = useState([]);
   const navigate = useNavigate();
 
-  // Load cart data when cartItems or products change
   useEffect(() => {
     const items = products.filter(product => cartItems[product._id]);
     setCartData(items);
   }, [cartItems, products]);
 
-  // Remove entire product from cart
   const removeFromCart = (productId) => {
     const updatedCart = { ...cartItems };
     delete updatedCart[productId];
     setCartItems(updatedCart);
   };
 
-  // Remove specific size from a product
   const removeSizeFromCart = (productId, size) => {
     const updatedCart = { ...cartItems };
     if (updatedCart[productId] && updatedCart[productId][size]) {
@@ -32,7 +29,6 @@ const Cart = () => {
     }
   };
 
-  // Calculate subtotal
   const subtotal = cartData.reduce((sum, item) => {
     const sizes = cartItems[item._id] || {};
     const itemTotal = Object.values(sizes).reduce((total, qty) => total + qty * item.price, 0);
@@ -73,7 +69,6 @@ const Cart = () => {
                     <h3 className="text-xl font-semibold">{item.name}</h3>
                     <p className="text-gray-600">Price: {currency}{item.price}</p>
 
-                    {/* Size-wise details */}
                     <div className="mt-2 space-y-1">
                       {Object.entries(cartItems[item._id] || {}).map(([size, qty]) => (
                         <div key={size} className="flex justify-between items-center text-gray-800">
@@ -110,7 +105,6 @@ const Cart = () => {
             <div>Total: {currency}{total}</div>
           </div>
 
-          {/* Proceed to Order Button */}
           <button
             onClick={() => navigate("/place-order")}
             className="mt-4 w-full py-3 bg-green-600 text-white text-lg font-semibold rounded hover:bg-green-700 transition"

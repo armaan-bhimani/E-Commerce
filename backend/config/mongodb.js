@@ -9,7 +9,6 @@ export const connectDB = async () => {
         console.error("MongoDB connection error:", err);
     });
     
-    // Fixed: Use "ecommerce" without hyphen (MongoDB doesn't allow hyphens in DB names via this method)
     await mongoose.connect(`${process.env.MONGODB_URI}ecommerce`);
 };
 

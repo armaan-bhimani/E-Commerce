@@ -5,6 +5,6 @@ import { getUserData, adminLogin } from "../controllers/userController.js";
 const router = express.Router();
 
 router.get("/data", userAuth, getUserData);
-router.post("/admin", adminLogin); // GET method with query params
+router.post("/admin", adminLogin); 
 
 export default router;

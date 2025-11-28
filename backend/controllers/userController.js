@@ -22,10 +22,9 @@ export const getUserData = async (req, res) => {
   }
 };
 
-// Admin login using ENV variables
 export const adminLogin = async (req, res) => {
   try {
-    const { email, password } = req.body; // GET method with query params
+    const { email, password } = req.body; 
 
     if (!email || !password) {
       return res.json({ success: false, message: "Please provide email and password" });

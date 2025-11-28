@@ -113,7 +113,6 @@ const List = ({ token }) => {
                     )}
                   </td>
                   <td className="px-4 py-2 space-x-2">
-                    {/* Edit Button */}
                     <button
                       onClick={() => handleEdit(product._id)}
                       className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600"
@@ -121,7 +120,6 @@ const List = ({ token }) => {
                       Edit
                     </button>
 
-                    {/* Delete Button */}
                     <button
                       onClick={() => handleDelete(product._id)}
                       className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"

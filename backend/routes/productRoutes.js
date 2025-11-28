@@ -1,4 +1,3 @@
-// routes/productRoute.js
 import express from "express";
 import upload from "../middleware/multer.js";
 import { addProduct, listProduct, removeProduct, singleProduct, updateProduct } from "../controllers/productController.js";
@@ -10,7 +9,7 @@ router.get("/list", listProduct);
 router.post("/remove", removeProduct);
 router.post("/single", singleProduct);
 
-// ✅ New route for updating a product
+//New route for updating a product
 router.put("/update", upload.array("images", 4), updateProduct);
 
 export default router;

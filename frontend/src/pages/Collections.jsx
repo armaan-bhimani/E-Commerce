@@ -9,7 +9,7 @@ const Collections = () => {
   const [sortOrder, setSortOrder] = useState(''); // 'low-high', 'high-low', 'newest', 'oldest'
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
-  const itemsPerPage = 8; // Number of products per page
+  const itemsPerPage = 8; 
 
   // Filter, search, and sort products
   const filteredProducts = products
@@ -49,9 +49,7 @@ const Collections = () => {
   return (
     <div className="max-w-6xl mx-auto p-4 lg:p-8">
       <div className="flex flex-col lg:flex-row gap-6">
-        {/* Left Filter Panel */}
         <div className="w-full lg:w-1/4 space-y-4">
-          {/* Search Filter */}
           <div className="border border-gray-200 p-3 rounded-md shadow-sm">
             <h3 className="font-semibold text-lg mb-2">Search</h3>
             <input
@@ -63,7 +61,6 @@ const Collections = () => {
             />
           </div>
 
-          {/* Category Filter */}
           <div className="border border-gray-200 p-3 rounded-md shadow-sm">
             <h3 className="font-semibold text-lg mb-2">Category</h3>
             <div className="space-y-1">
@@ -84,7 +81,6 @@ const Collections = () => {
             </div>
           </div>
 
-          {/* Type Filter */}
           <div className="border border-gray-200 p-3 rounded-md shadow-sm">
             <h3 className="font-semibold text-lg mb-2">Type</h3>
             <div className="space-y-1">
@@ -106,16 +102,13 @@ const Collections = () => {
           </div>
         </div>
 
-        {/* Right Collections Panel */}
         <div className="flex-1">
-          {/* Fancy Heading */}
           <div className="flex justify-between items-center mb-6 flex-wrap">
             <div className="flex items-center gap-3">
               <div className="w-12 h-0.5 bg-black"></div>
               <h2 className="font-serif text-xl sm:text-2xl lg:text-3xl font-bold">ALL COLLECTIONS</h2>
             </div>
 
-            {/* Sort by */}
             <select
               value={sortOrder}
               onChange={e => { setSortOrder(e.target.value); setCurrentPage(1); }}
@@ -129,7 +122,6 @@ const Collections = () => {
             </select>
           </div>
 
-          {/* Products Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {currentProducts.length > 0 ? (
               currentProducts.map(product => (
@@ -146,7 +138,6 @@ const Collections = () => {
             )}
           </div>
 
-          {/* Pagination */}
           {totalPages > 1 && (
             <div className="flex justify-center mt-6 gap-2 flex-wrap">
               {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (

@@ -14,8 +14,8 @@ const Sidebar = () => {
             `flex items-center gap-3 p-3 rounded-xl cursor-pointer 
             transition-all ${
               isActive
-                ? "bg-pink-200 text-black"   // active: pink background, black text
-                : "bg-gray-100 text-black hover:bg-pink-200" // inactive: gray bg, black text, hover pink
+                ? "bg-pink-200 text-black"   
+                : "bg-gray-100 text-black hover:bg-pink-200" 
             }`
           }
         >

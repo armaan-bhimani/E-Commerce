@@ -41,8 +41,8 @@ const PlaceOrder = () => {
   // Place order handler
   const handlePlaceOrder = () => {
     alert("Your order has been placed successfully!");
-    setCartItems({}); // Clear the cart
-    setForm({      // Clear the form
+    setCartItems({}); 
+    setForm({      
       firstName: "",
       lastName: "",
       email: "",
@@ -58,7 +58,6 @@ const PlaceOrder = () => {
   return (
     <div className="max-w-6xl mx-auto p-6 grid md:grid-cols-2 gap-6">
 
-      {/* Left: Delivery Form */}
       <div className="bg-white p-6 rounded-lg shadow space-y-4">
         <h2 className="text-2xl font-bold mb-4">Delivery Information</h2>
         <form className="space-y-4">
@@ -142,7 +141,6 @@ const PlaceOrder = () => {
           />
         </form>
 
-        {/* Payment Methods Display */}
         <div className="mt-4 p-4 bg-gray-50 border rounded-lg">
           <h3 className="text-lg font-semibold mb-2">Payment Methods</h3>
           <ul className="list-disc list-inside text-gray-700 space-y-1">
@@ -152,7 +150,6 @@ const PlaceOrder = () => {
           </ul>
         </div>
 
-        {/* Place Order Button */}
         <button
           onClick={handlePlaceOrder}
           className="mt-6 w-full py-3 bg-green-600 text-white text-lg font-semibold rounded hover:bg-green-700 transition"
@@ -161,7 +158,6 @@ const PlaceOrder = () => {
         </button>
       </div>
 
-      {/* Right: Cart Summary */}
       <div className="bg-white p-6 rounded-lg shadow space-y-4">
         <h2 className="text-2xl font-bold mb-4">Order Summary</h2>
 

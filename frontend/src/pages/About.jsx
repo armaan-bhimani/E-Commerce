@@ -5,16 +5,13 @@ const About = () => {
   return (
     <div className="w-full py-16 px-6 flex flex-col items-center">
 
-      {/* Fancy Title with built-in HR effect */}
       <h2 className="text-4xl font-bold tracking-wide text-gray-800 text-center mb-10 relative">
         ABOUT US
-        <span className="inline-block ml-2 align-middle w-15 h-[2px] bg-black"></span>
+        <span className="inline-block ml-2 align-middle w-15 h-0.5 bg-black"></span>
       </h2>
 
-      {/* Content */}
       <div className="max-w-5xl w-full grid md:grid-cols-2 gap-12 items-center">
 
-        {/* Image */}
         <div>
           <img
             src={assets.about_img}
@@ -23,7 +20,6 @@ const About = () => {
           />
         </div>
 
-        {/* Text Content */}
         <div>
           <h3 className="text-2xl font-semibold mb-4 text-gray-900">
             Who We Are

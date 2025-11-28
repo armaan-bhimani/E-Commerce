@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App.jsx";
 import { BrowserRouter } from "react-router-dom";
 import ShopContextProvider from "./context/ShopContext.jsx";
-import { AppProvider } from "./context/appContext.jsx"; // your auth/backend context
+import { AppProvider } from "./context/appContext.jsx"; 
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

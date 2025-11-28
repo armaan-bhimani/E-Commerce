@@ -1,7 +1,7 @@
 import cloudinary from "../config/cloudinary.js";
 import productModel from "../models/productModel.js";
 
-// ---------- Add Product ----------
+//  Add Product 
 const addProduct = async (req, res) => {
   try {
     const { name, description, price, category, subCategory, sizes, bestseller } = req.body;
@@ -34,7 +34,7 @@ const addProduct = async (req, res) => {
   }
 };
 
-// ---------- List Products ----------
+//  List Products 
 const listProduct = async (req, res) => {
   try {
     const products = await productModel.find({});
@@ -45,7 +45,7 @@ const listProduct = async (req, res) => {
   }
 };
 
-// ---------- Remove Product ----------
+//  Remove Product 
 const removeProduct = async (req, res) => {
   try {
     await productModel.findByIdAndDelete(req.body.productId);
@@ -56,7 +56,7 @@ const removeProduct = async (req, res) => {
   }
 };
 
-// ---------- Single Product ----------
+// Single Product 
 const singleProduct = async (req, res) => {
   try {
     const product = await productModel.findById(req.body.productId);
@@ -67,7 +67,7 @@ const singleProduct = async (req, res) => {
   }
 };
 
-// ---------- Update Product ----------
+// Update Product 
 const updateProduct = async (req, res) => {
   try {
     const { productId, name, description, price, category, subCategory, sizes, bestseller } = req.body;

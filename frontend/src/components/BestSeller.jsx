@@ -14,7 +14,7 @@ const BestSeller = () => {
   }, [products]);
 
   const handleProductClick = (id) => {
-    navigate(`/product/${id}`); // Navigate to product detail page
+    navigate(`/product/${id}`); 
   };
 
   // Helper to parse images JSON
@@ -32,7 +32,7 @@ const BestSeller = () => {
 
   return (
     <div className="py-2 px-4 sm:px-8 lg:px-16 bg-white flex flex-col items-center">
-      {/* Heading */}
+      
       <div className="text-center flex flex-col items-center mb-12">
         <h3 className="text-3xl md:text-4xl font-semibold text-gray-800 mb-3 inline-flex items-center relative">
           <span className="w-16 h-[3px] bg-gray-800 mr-4 hidden sm:inline-block"></span>
@@ -43,7 +43,6 @@ const BestSeller = () => {
         </p>
       </div>
 
-      {/* Products Grid */}
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 w-full max-w-[1600px]">
         {bestSellerProducts.map((product, index) => {
           const imageUrl = getProductImage(product);

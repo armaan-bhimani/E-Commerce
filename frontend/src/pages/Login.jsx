@@ -100,7 +100,6 @@ const Login = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-50">
       <div className="w-full max-w-md p-8 bg-white rounded-xl shadow-lg">
-        {/* Logo */}
         <div className="flex justify-center mb-6">
           <img
             onClick={() => navigate("/")}
@@ -110,7 +109,6 @@ const Login = () => {
           />
         </div>
 
-        {/* Heading */}
         <div className="text-center mb-6">
           <h2 className="text-3xl font-bold text-gray-800">
             {state === "Sign Up" 
@@ -124,7 +122,6 @@ const Login = () => {
           </p>
         </div>
 
-        {/* Form */}
         <form onSubmit={onSubmitHandler} className="space-y-4">
           {state === "Sign Up" && !otpSent && (
             <div className="flex items-center border border-gray-300 rounded-lg p-2">
@@ -233,7 +230,6 @@ const Login = () => {
           </p>
         )}
 
-        {/* Resend OTP option */}
         {otpSent && (
           <p className="text-center text-sm text-gray-600 mt-4">
             Didn't receive OTP?{" "}

@@ -3,22 +3,22 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-// ✅ Create context
+// Create context
 export const AppContext = createContext();
 
-// ✅ AppContextProvider component
+// AppContextProvider component
 export const AppProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState(null);
 
-  // ✅ Backend URL
+  // Backend URL
   const backendUrl = import.meta.env.VITE_BACKEND_URL || "http://localhost:5000";
 
-  // ✅ Configure axios globally
+  // Configure axios globally
   axios.defaults.baseURL = backendUrl;
-  axios.defaults.withCredentials = true; // ensures cookies are sent
+  axios.defaults.withCredentials = true; 
 
-  // ✅ Check authentication state
+  // Check authentication state
   const getAuthState = async () => {
     try {
       const { data } = await axios.get("/api/auth/is-auth");
@@ -42,7 +42,7 @@ export const AppProvider = ({ children }) => {
     }
   };
 
-  // ✅ Fetch user data
+  // Fetch user data
   const getUserData = async () => {
     try {
       const { data } = await axios.get("/api/user/data");
@@ -60,7 +60,7 @@ export const AppProvider = ({ children }) => {
     }
   };
 
-  // ✅ Logout
+  // Logout
   const logout = async () => {
     try {
       const { data } = await axios.post("/api/auth/logout");
@@ -76,12 +76,10 @@ export const AppProvider = ({ children }) => {
     }
   };
 
-  // ✅ Run once on app start
   useEffect(() => {
     getAuthState();
   }, []);
 
-  // ✅ Values to share
   const value = {
     backendUrl,
     isLoggedIn,

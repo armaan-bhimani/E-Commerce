@@ -8,7 +8,7 @@ const ShopContextProvider = (props) => {
   const deliveryCharge = 10;
   const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
-  const [products, setProducts] = useState([]); // fetched products
+  const [products, setProducts] = useState([]); 
   const [cartItems, setCartItems] = useState({});
   const [orderSummary, setOrderSummary] = useState(null);
 

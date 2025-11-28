@@ -16,7 +16,7 @@ const Login = ({ setToken }) => {
       console.log("Login Response:", response.data);
 
       if (response.data.success) {
-        setToken(response.data.token); // save token in App state
+        setToken(response.data.token); 
       } else {
         toast.error(response.data.message || "Login failed. Please try again.");
       }

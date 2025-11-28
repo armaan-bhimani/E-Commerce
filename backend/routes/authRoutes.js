@@ -1,4 +1,3 @@
-// server/routes/authRoutes.js
 import express from "express";
 import { 
   register, 
@@ -21,7 +20,7 @@ router.post("/logout", logout);
 
 // OTP verification for account
 router.post("/send-verify-otp", userAuth, sendVerifyOtp);
-router.post("/verify-otp", userAuth, verifyAccount); // changed path from /verifyaccount to /verify-otp to match frontend
+router.post("/verify-otp", userAuth, verifyAccount); 
 
 // Authentication check
 router.get("/is-auth", userAuth, isAuthenticated);

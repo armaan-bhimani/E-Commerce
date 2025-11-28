@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken';
 import User from '../models/userModel.js';
 import transporter from '../nodemailer/nodemailer.js';
 
-// ====================== REGISTER ======================
+//  REGISTER 
 export const register = async (req, res) => {
   const { name, email, password } = req.body;
   
@@ -59,7 +59,7 @@ export const register = async (req, res) => {
   }
 };
 
-// ====================== LOGIN ======================
+//  LOGIN 
 export const login = async (req, res) => {
   const { email, password } = req.body;
 
@@ -114,7 +114,7 @@ export const login = async (req, res) => {
   }
 };
 
-// ====================== LOGOUT ======================
+//LOGOUT 
 export const logout = (req, res) => {
   try {
     res.clearCookie('token', {
@@ -128,7 +128,7 @@ export const logout = (req, res) => {
   }
 };
 
-// ====================== SEND VERIFY OTP ======================
+// SEND VERIFY OTP 
 export const sendVerifyOtp = async (req, res) => {
   try {
     const userId = req.userId;
@@ -173,7 +173,7 @@ export const sendVerifyOtp = async (req, res) => {
   }
 };
 
-// ====================== VERIFY ACCOUNT ======================
+//  VERIFY ACCOUNT 
 export const verifyAccount = async (req, res) => {
   try {
     const userId = req.userId;

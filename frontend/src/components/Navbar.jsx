@@ -8,10 +8,7 @@ const Navbar = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const navigate = useNavigate();
 
-  // Get cart count from ShopContext
   const { getCartCount } = useContext(ShopContext);
-  
-  // Get auth state from AppContext
   const { isLoggedIn, logout, user } = useContext(AppContext);
 
   const handleLogout = async () => {
@@ -27,7 +24,6 @@ const Navbar = () => {
           <img src={assets.logo} className="w-28" alt="logo" />
         </Link>
 
-        {/* Desktop Nav */}
         <ul className="hidden sm:flex gap-8 text-sm text-gray-700">
           <NavLink to="/" className="relative group">
             <p className="hover:text-gray-500">HOME</p>
@@ -54,10 +50,8 @@ const Navbar = () => {
           </NavLink>
         </ul>
 
-        {/* Right Icons */}
         <div className="flex items-center gap-4">
 
-          {/* Profile Dropdown */}
           <div className="relative group cursor-pointer">
             <img src={assets.profile_icon} className="w-5 h-5" alt="profile" />
             
@@ -96,7 +90,6 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Cart Icon */}
           <Link to="/cart" className="relative">
             <img src={assets.cart_icon} className="w-5 h-5" alt="cart" />
             <p className="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] px-1 rounded-full">
@@ -104,7 +97,6 @@ const Navbar = () => {
             </p>
           </Link>
 
-          {/* Hamburger Menu */}
           <img
             src={assets.menu_icon}
             className="sm:hidden w-4 h-4 cursor-pointer"
@@ -113,7 +105,6 @@ const Navbar = () => {
           />
         </div>
 
-        {/* Mobile Sidebar */}
         <div className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-50 transform transition-transform duration-300
                         ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}>
           <div className="flex justify-between items-center p-4 border-b">
@@ -121,7 +112,6 @@ const Navbar = () => {
             <button onClick={() => setSidebarOpen(false)} className="text-gray-700 text-2xl font-bold">&times;</button>
           </div>
 
-          {/* User Info in Sidebar */}
           {isLoggedIn && user && (
             <div className="px-4 py-3 border-b border-gray-200 bg-gray-50">
               <p className="text-xs text-gray-500">Logged in as</p>
@@ -176,7 +166,6 @@ const Navbar = () => {
           </nav>
         </div>
 
-        {/* Overlay */}
         {sidebarOpen &&
           <div
             className="fixed inset-0 bg-black opacity-30 z-40"
@@ -186,7 +175,6 @@ const Navbar = () => {
 
       </div>
 
-      {/* HR at the bottom of Navbar */}
       <hr className="border-t border-gray-300 mt-2" />
     </>
   );

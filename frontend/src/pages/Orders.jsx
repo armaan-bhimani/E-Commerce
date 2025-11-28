@@ -23,7 +23,6 @@ const Orders = () => {
     <div className="p-6 max-w-5xl mx-auto">
       <h2 className="text-2xl font-bold mb-4">Order Summary</h2>
 
-      {/* Items Section */}
       <div className="space-y-5">
         {items.length === 0 ? (
           <p className="text-gray-600">No items in this order.</p>
@@ -35,7 +34,6 @@ const Orders = () => {
             >
               <h3 className="font-semibold text-xl">{item.name}</h3>
 
-              {/* Sizes & Quantities */}
               {Object.entries(cartItems[item._id] || {}).map(
                 ([size, qty]) => (
                   <p key={size} className="text-gray-700">
@@ -52,7 +50,6 @@ const Orders = () => {
         )}
       </div>
 
-      {/* Totals */}
       <div className="mt-6 p-4 bg-gray-200 rounded-lg font-semibold text-lg">
         <p>
           Subtotal: {currency}
